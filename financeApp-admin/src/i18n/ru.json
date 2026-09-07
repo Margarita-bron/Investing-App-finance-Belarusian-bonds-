@@ -1,0 +1,206 @@
+{
+  "nav": {
+    "users": "Пользователи",
+    "bonds": "Облигации",
+    "companies": "Компании",
+    "courses": "Курсы",
+    "questions": "Вопросы риска",
+    "macro": "Макроданные",
+    "admins": "Администраторы",
+    "parseConfig": "Конфиг парсера"
+  },
+  "layout": {
+    "title": "Панель администратора",
+    "signOut": "Выйти"
+  },
+  "login": {
+    "subtitle": "Ограниченный доступ. Только для администраторов.",
+    "continueWithGoogle": "Войти через Google",
+    "signingIn": "Вход…",
+    "mustHaveAdmin": "Для доступа к панели необходимы права администратора."
+  },
+  "auth": {
+    "accessDenied": "Доступ запрещён",
+    "noAdminPrivileges": "Ваш аккаунт ({{email}}) не имеет прав администратора. Обратитесь к действующему администратору.",
+    "signOut": "Выйти"
+  },
+  "common": {
+    "save": "Сохранить",
+    "saving": "Сохранение…",
+    "cancel": "Отмена",
+    "edit": "Редактировать",
+    "delete": "Удалить",
+    "deleting": "Удаление…",
+    "close": "Закрыть",
+    "view": "Просмотр",
+    "remove": "Удалить",
+    "removing": "Удаление…",
+    "adding": "Добавление…",
+    "refresh": "↻ Обновить",
+    "starting": "Запуск…"
+  },
+  "users": {
+    "title": "Пользователи",
+    "searchPlaceholder": "Поиск по имени или UID…",
+    "noUsersFound": "Пользователи не найдены",
+    "anonymous": "Аноним",
+    "columns": {
+      "name": "Имя",
+      "uid": "UID",
+      "balance": "Баланс",
+      "riskProfile": "Профиль риска",
+      "score": "Оценка",
+      "joined": "Дата регистрации"
+    },
+    "detail": {
+      "title": "Детали пользователя",
+      "balance": "Баланс",
+      "deposit": "Депозит",
+      "grossProfit": "Валовая прибыль",
+      "grossLoss": "Валовые убытки",
+      "riskProfile": "Профиль риска",
+      "compositeScore": "Суммарный балл",
+      "onboardingScore": "Балл онбординга",
+      "tradingScore": "Торговый балл",
+      "quizScore": "Балл викторины",
+      "taskScore": "Балл заданий",
+      "tradeAnalytics": "Торговая аналитика",
+      "totalTrades": "Всего сделок",
+      "wins": "Победы",
+      "losses": "Поражения",
+      "totalProfit": "Общая прибыль",
+      "totalLoss": "Общий убыток",
+      "maxDrawdown": "Макс. просадка",
+      "winStreak": "Серия побед (лучшая)",
+      "equity": "Капитал",
+      "noTrades": "Нет данных о сделках"
+    }
+  },
+  "bonds": {
+    "title": "Облигации",
+    "updateNow": "Обновить",
+    "searchPlaceholder": "Поиск облигаций…",
+    "allTypes": "Все типы",
+    "government": "Государственные",
+    "corporate": "Корпоративные",
+    "banking": "Банковские",
+    "noBondsFound": "Облигации не найдены",
+    "updateStarted": "Обновление облигаций запущено. Обновите через ~30 сек.",
+    "updateFinished": "Парсинг завершён. Можно обновить страницу.",
+    "columns": {
+      "name": "Название",
+      "issuer": "Эмитент",
+      "type": "Тип",
+      "currency": "Валюта",
+      "price": "Цена",
+      "ytm": "Доходность %",
+      "duration": "Дюрация",
+      "quality": "Качество",
+      "maturity": "Погашение"
+    }
+  },
+  "companies": {
+    "title": "Компании",
+    "addCompany": "+ Добавить компанию",
+    "noCompaniesYet": "Компании не добавлены",
+    "issuerNameRequired": "Название эмитента обязательно",
+    "savedSuccessfully": "Успешно сохранено!",
+    "failedToLoad": "Не удалось загрузить компании",
+    "columns": {
+      "logo": "Логотип",
+      "issuerName": "Название эмитента",
+      "displayName": "Отображаемое имя",
+      "industry": "Отрасль",
+      "website": "Сайт",
+      "updated": "Обновлено"
+    },
+    "modal": {
+      "addCompany": "Добавить компанию",
+      "editCompany": "Редактировать: {{name}}",
+      "issuerName": "Название эмитента *",
+      "issuerNamePlaceholder": "Точно как в таблице облигаций",
+      "displayName": "Отображаемое имя",
+      "displayNamePlaceholder": "Читаемое название",
+      "description": "Описание",
+      "descriptionPlaceholder": "Краткое описание компании",
+      "website": "Сайт",
+      "industry": "Отрасль",
+      "industryPlaceholder": "напр. Банки, Технологии, Энергетика",
+      "logo": "Логотип",
+      "chooseImage": "Выбрать изображение…",
+      "uploading": "Загрузка… {{progress}}%"
+    }
+  },
+  "questions": {
+    "title": "Вопросы профиля риска",
+    "addQuestion": "+ Добавить вопрос",
+    "noQuestionsYet": "Вопросов пока нет. Добавьте первый!",
+    "editQuestion": "Редактировать вопрос",
+    "newQuestion": "Новый вопрос",
+    "bothLangsRequired": "Текст вопроса обязателен на обоих языках",
+    "minTwoOptions": "Необходимо минимум 2 варианта ответа",
+    "allOptionsBothLangs": "Все варианты должны иметь текст на обоих языках",
+    "deleteConfirm": "Удалить этот вопрос и все его варианты?",
+    "answerOptions": "Варианты ответов",
+    "addOption": "+ Добавить вариант",
+    "option": "Вариант {{num}}",
+    "score": "Балл:",
+    "textRussian": "Вопрос (русский) *",
+    "textEnglish": "Вопрос (английский) *",
+    "order": "Порядок",
+    "textRuPlaceholder": "Текст вопроса на русском",
+    "textEnPlaceholder": "Question text in English",
+    "optionTextRu": "Текст (русский)",
+    "optionTextEn": "Текст (английский)",
+    "optionsNote": "Примечание: Варианты нельзя редактировать после создания (ограничение бэкенда). Удалите и создайте вопрос заново для изменения вариантов.",
+    "update": "Обновить",
+    "create": "Создать"
+  },
+  "macro": {
+    "title": "Макроэкономические данные",
+    "currentValues": "Текущие значения",
+    "month": "Месяц",
+    "inflationRate": "Уровень инфляции",
+    "avgDepositRate": "Средняя ставка депозита",
+    "lastUpdated": "Последнее обновление:",
+    "noMacroData": "Макроданные ещё не установлены.",
+    "updateForMonth": "Обновить за текущий месяц",
+    "valuesDecimalNote": "Значения в десятичном формате (напр. 0.085 = 8.5%). Месяц устанавливается автоматически.",
+    "inflationRateDecimal": "Уровень инфляции (десятичный)",
+    "avgDepositRateDecimal": "Средняя ставка депозита (десятичный)",
+    "saveMacroData": "Сохранить данные",
+    "macroDataUpdated": "Макроданные обновлены!",
+    "bothValuesMustBeNumbers": "Оба значения должны быть числами"
+  },
+  "admins": {
+    "title": "Администраторы",
+    "grantAdminAccess": "Предоставить доступ",
+    "grantAccessDescription": "Введите Firebase UID существующего пользователя для предоставления прав администратора. Пользователь должен хотя бы один раз войти в мобильное приложение.",
+    "uidPlaceholder": "Firebase UID (напр. abc123xyz...)",
+    "grantAccess": "Предоставить доступ",
+    "adminAdded": "Администратор добавлен. Необходимо выйти и войти снова для применения изменений.",
+    "adminList": "Список администраторов",
+    "uidRequired": "UID обязателен",
+    "cannotRemoveSelf": "Нельзя удалить себя из администраторов.",
+    "removeConfirm": "Удалить права администратора у {{uid}}?",
+    "noAdminsFound": "Администраторы не найдены",
+    "you": "Вы",
+    "columns": {
+      "user": "Пользователь",
+      "uid": "UID",
+      "addedBy": "Добавлен кем",
+      "addedOn": "Дата добавления"
+    }
+  },
+  "parseConfig": {
+    "title": "Конфиг парсера (parseSinglePage)",
+    "parseNow": "Запустить парсинг",
+    "saveConfig": "Сохранить конфиг",
+    "configSaved": "Конфигурация сохранена!",
+    "scrapeStarted": "Парсинг облигаций запущен в фоне. Проверьте вкладку облигаций через ~30 секунд.",
+    "description": "Это JavaScript-код функции parseSinglePage парсера облигаций. Получает $ (Cheerio) и HTML страницы, возвращает объект облигации. Сохраните изменения и нажмите «Запустить парсинг» для тестирования."
+  },
+  "courses": {
+    "title": "Курсы"
+  }
+}

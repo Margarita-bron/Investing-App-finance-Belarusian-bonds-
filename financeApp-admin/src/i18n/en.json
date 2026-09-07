@@ -1,0 +1,206 @@
+{
+  "nav": {
+    "users": "Users",
+    "bonds": "Bonds",
+    "companies": "Companies",
+    "courses": "Courses",
+    "questions": "Risk Questions",
+    "macro": "Macro Data",
+    "admins": "Admins",
+    "parseConfig": "Parser Config"
+  },
+  "layout": {
+    "title": "FintechApp Admin Panel",
+    "signOut": "Sign Out"
+  },
+  "login": {
+    "subtitle": "Restricted access. Admins only.",
+    "continueWithGoogle": "Continue with Google",
+    "signingIn": "Signing in…",
+    "mustHaveAdmin": "You must have admin privileges to access this panel."
+  },
+  "auth": {
+    "accessDenied": "Access Denied",
+    "noAdminPrivileges": "Your account ({{email}}) does not have admin privileges. Contact an existing admin to grant you access.",
+    "signOut": "Sign Out"
+  },
+  "common": {
+    "save": "Save",
+    "saving": "Saving…",
+    "cancel": "Cancel",
+    "edit": "Edit",
+    "delete": "Delete",
+    "deleting": "Deleting…",
+    "close": "Close",
+    "view": "View",
+    "remove": "Remove",
+    "removing": "Removing…",
+    "adding": "Adding…",
+    "refresh": "↻ Refresh",
+    "starting": "Starting…"
+  },
+  "users": {
+    "title": "Users",
+    "searchPlaceholder": "Search by name or UID…",
+    "noUsersFound": "No users found",
+    "anonymous": "Anonymous",
+    "columns": {
+      "name": "Name",
+      "uid": "UID",
+      "balance": "Balance",
+      "riskProfile": "Risk Profile",
+      "score": "Score",
+      "joined": "Joined"
+    },
+    "detail": {
+      "title": "User Detail",
+      "balance": "Balance",
+      "deposit": "Deposit",
+      "grossProfit": "Gross Profit",
+      "grossLoss": "Gross Loss",
+      "riskProfile": "Risk Profile",
+      "compositeScore": "Composite Score",
+      "onboardingScore": "Onboarding Score",
+      "tradingScore": "Trading Score",
+      "quizScore": "Quiz Score",
+      "taskScore": "Task Score",
+      "tradeAnalytics": "Trade Analytics",
+      "totalTrades": "Total Trades",
+      "wins": "Wins",
+      "losses": "Losses",
+      "totalProfit": "Total Profit",
+      "totalLoss": "Total Loss",
+      "maxDrawdown": "Max Drawdown",
+      "winStreak": "Win Streak (best)",
+      "equity": "Equity",
+      "noTrades": "No trade data available"
+    }
+  },
+  "bonds": {
+    "title": "Bonds",
+    "updateNow": "Update Now",
+    "searchPlaceholder": "Search bonds…",
+    "allTypes": "All types",
+    "government": "Government",
+    "corporate": "Corporate",
+    "banking": "Banking",
+    "noBondsFound": "No bonds found",
+    "updateStarted": "Bond updating started in background. Refresh in ~30s.",
+    "updateFinished": "Parsing finished. You can refresh now.",
+    "columns": {
+      "name": "Name",
+      "issuer": "Issuer",
+      "type": "Type",
+      "currency": "Currency",
+      "price": "Price",
+      "ytm": "YTM %",
+      "duration": "Duration",
+      "quality": "Quality",
+      "maturity": "Maturity"
+    }
+  },
+  "companies": {
+    "title": "Companies",
+    "addCompany": "+ Add Company",
+    "noCompaniesYet": "No companies yet",
+    "issuerNameRequired": "Issuer name is required",
+    "savedSuccessfully": "Saved successfully!",
+    "failedToLoad": "Failed to load companies",
+    "columns": {
+      "logo": "Logo",
+      "issuerName": "Issuer Name",
+      "displayName": "Display Name",
+      "industry": "Industry",
+      "website": "Website",
+      "updated": "Updated"
+    },
+    "modal": {
+      "addCompany": "Add Company",
+      "editCompany": "Edit: {{name}}",
+      "issuerName": "Issuer Name *",
+      "issuerNamePlaceholder": "Exactly as stored in bonds table",
+      "displayName": "Display Name",
+      "displayNamePlaceholder": "Human-readable name",
+      "description": "Description",
+      "descriptionPlaceholder": "Short description of the company",
+      "website": "Website",
+      "industry": "Industry",
+      "industryPlaceholder": "e.g. Banking, Technology, Energy",
+      "logo": "Logo",
+      "chooseImage": "Choose Image…",
+      "uploading": "Uploading… {{progress}}%"
+    }
+  },
+  "questions": {
+    "title": "Risk Profile Questions",
+    "addQuestion": "+ Add Question",
+    "noQuestionsYet": "No questions yet. Add the first one!",
+    "editQuestion": "Edit Question",
+    "newQuestion": "New Question",
+    "bothLangsRequired": "Both Russian and English question text are required",
+    "minTwoOptions": "At least 2 options are required",
+    "allOptionsBothLangs": "All options must have text in both languages",
+    "deleteConfirm": "Delete this question and all its options?",
+    "answerOptions": "Answer Options",
+    "addOption": "+ Add Option",
+    "option": "Option {{num}}",
+    "score": "Score:",
+    "textRussian": "Question (Russian) *",
+    "textEnglish": "Question (English) *",
+    "order": "Order",
+    "textRuPlaceholder": "Текст вопроса на русском",
+    "textEnPlaceholder": "Question text in English",
+    "optionTextRu": "Text (Russian)",
+    "optionTextEn": "Text (English)",
+    "optionsNote": "Note: Options cannot be edited after creation (backend limitation). Delete and re-create the question to change options.",
+    "update": "Update",
+    "create": "Create"
+  },
+  "macro": {
+    "title": "Macro Data",
+    "currentValues": "Current Values",
+    "month": "Month",
+    "inflationRate": "Inflation Rate",
+    "avgDepositRate": "Avg Deposit Rate",
+    "lastUpdated": "Last updated:",
+    "noMacroData": "No macro data set yet.",
+    "updateForMonth": "Update for Current Month",
+    "valuesDecimalNote": "Values are stored as decimals (e.g. 0.085 = 8.5%). The month is set automatically to the current calendar month.",
+    "inflationRateDecimal": "Inflation Rate (decimal)",
+    "avgDepositRateDecimal": "Avg Deposit Rate (decimal)",
+    "saveMacroData": "Save Macro Data",
+    "macroDataUpdated": "Macro data updated!",
+    "bothValuesMustBeNumbers": "Both values must be valid numbers"
+  },
+  "admins": {
+    "title": "Admins",
+    "grantAdminAccess": "Grant Admin Access",
+    "grantAccessDescription": "Enter the Firebase UID of an existing user to grant them admin access. The user must have already signed in to the mobile app at least once.",
+    "uidPlaceholder": "Firebase UID (e.g. abc123xyz...)",
+    "grantAccess": "Grant Access",
+    "adminAdded": "Admin added. They must sign out and back in for the claim to take effect.",
+    "adminList": "Admin List",
+    "uidRequired": "UID is required",
+    "cannotRemoveSelf": "You cannot remove yourself as admin.",
+    "removeConfirm": "Remove admin privileges from {{uid}}?",
+    "noAdminsFound": "No admins found",
+    "you": "You",
+    "columns": {
+      "user": "User",
+      "uid": "UID",
+      "addedBy": "Added By",
+      "addedOn": "Added On"
+    }
+  },
+  "parseConfig": {
+    "title": "Parser Config (parseSinglePage)",
+    "parseNow": "Parse Now",
+    "saveConfig": "Save Config",
+    "configSaved": "Config saved successfully!",
+    "scrapeStarted": "Bond scraping started in background. Check the Bonds tab in ~30 seconds.",
+    "description": "This is the JavaScript code that runs inside the bond scraper's parseSinglePage function. It receives $ (Cheerio) and the page HTML, and must return a bond object. Save changes here, then click \"Parse Now\" to test with live data."
+  },
+  "courses": {
+    "title": "Courses"
+  }
+}

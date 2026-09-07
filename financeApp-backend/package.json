@@ -1,0 +1,42 @@
+{
+  "name": "financeapp-backend",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cd": "cd .",
+    "run": "npm run dev",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsx src/index.ts",
+    "build": "tsc",
+    "migrate": "tsx src/migrate.ts",
+    "start": "node dist/index.js",
+    "update:bonds": "tsx src/services/updateBonds.ts",
+    "app": "npx eas-build -p android --profile development"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.13.6",
+    "cheerio": "^1.2.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.3.1",
+    "express": "^5.2.1",
+    "firebase-admin": "^13.7.0",
+    "node-cron": "^4.2.1"
+  },
+  "devDependencies": {
+    "@types/cheerio": "^0.22.35",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.5.0",
+    "@types/node-cron": "^3.0.11",
+    "@types/pg": "^8.18.0",
+    "pg": "^8.20.0",
+    "ts-node": "^10.9.2",
+    "tsx": "^4.22.3",
+    "typescript": "^5.9.3"
+  }
+}
