@@ -1,22 +1,6 @@
 # FintechApp — Investment Education App (Belarusian Bonds)
 
-Diploma project: a platform for financial literacy education and investing practice, focused on the Belarusian bond market. It consists of three parts — a mobile app for end users, a web admin panel, and a shared backend API built on PostgreSQL and Firebase.
-
-Users go through a risk-profiling flow, study investing courses, practice on a demo account with a virtual balance (trades executed against live crypto-pair quotes from Binance), and receive personalized bond recommendations based on their risk profile.
-
-## Table of Contents
-
-- [Key Features](#key-features)
-- [Tech Stack](#tech-stack)
-- [Project Structure](#project-structure)
-- [Prerequisites](#prerequisites)
-- [Installation](#installation)
-- [Environment Variables](#environment-variables)
-- [Running Locally](#running-locally)
-- [Database](#database)
-- [Deployment](#deployment)
-- [Available Scripts](#available-scripts)
-- [Security Notes & Known Issues](#security-notes--known-issues)
+Diploma project: a platform for financial literacy education and investing practice, focused on the Belarusian bond market. Users go through a risk-profiling flow, study investing courses, practice on a demo account with a virtual balance (trades executed against live crypto-pair quotes from Binance), and receive personalized bond recommendations based on their risk profile.
 
 ## Key Features
 
@@ -95,7 +79,7 @@ FintechApp/
 - A Firebase project (Authentication + Firestore, plus the ability to create a Service Account)
 - Expo CLI / EAS CLI to build the mobile app (`npm install -g eas-cli`)
 - A Cloudinary account (for image uploads in the admin panel)
-- Android Studio / Xcode — optional, for building and running native versions of the mobile app
+- Android Studio — for building and running native versions of the mobile app
 
 ## Installation
 
@@ -160,7 +144,7 @@ Each part of the project uses its own `.env` file in its folder. Only variable n
 
 ## Running Locally
 
-**Backend** (runs on `http://localhost:3000` by default):
+**Backend**:
 
 ```bash
 cd financeApp-backend
@@ -172,9 +156,7 @@ npm run dev
 ```bash
 cd financeApp
 npm run start        # standard start (Expo Dev Tools)
-npm run lan          # start with local network access
 npm run tunnel       # start via tunnel (for testing outside the local network)
-npm run web          # start the web build
 ```
 
 **Admin panel**:
@@ -183,8 +165,6 @@ npm run web          # start the web build
 cd financeApp-admin
 npm run dev
 ```
-
-By default the panel opens on the port Vite prints (usually `http://localhost:5173`).
 
 ## Database
 
@@ -197,91 +177,6 @@ npm run migrate
 
 Tables created: `users`, `courses`, `lessons`, `tasks`, `questions`, `admins`, `bonds`, `macro_data`, `trades`, `trade_analytics`, `risk_profiles`, `companies`, `app_config`, `risk_profile_questions`, `risk_profile_options`, `user_risk_test_responses`, `lesson_quiz_results`, `lesson_task_results`. Course and lesson content is not stored in PostgreSQL — it lives in Firestore.
 
-For incremental schema updates without a full rebuild, use `financeApp-backend/src/migrate_update.ts` (run via `tsx`).
+## Preview
 
-Bond data can be refreshed manually with:
-
-```bash
-npm run update:bonds
-```
-
-## Deployment
-
-Based on the backend code (`db.ts` enables SSL when the connection string contains `railway`), the project is set up to be hosted on **Railway** (backend + managed PostgreSQL). Below is the general deployment flow for each part.
-
-### Backend (Railway / Render / any Node.js host)
-
-1. Create a service from the repository and add a PostgreSQL plugin (or connect an external database).
-2. Set environment variables on the host: `DATABASE_URL` (usually provided automatically by the DB plugin), `FIREBASE_SERVICE_ACCOUNT`, `PORT`.
-3. Build command: `npm run build` (compiles TypeScript into `dist/`).
-4. Start command: `npm run start` (runs `dist/index.js`). For debugging on the server you can temporarily use `npm run dev`.
-5. After the first deploy, run the database migration once: `npm run migrate` (via the host's built-in console or a temporary shell).
-6. Check the `GET /health` endpoint — it should return `{"status":"ok"}`.
-
-### Admin panel (Vercel / Netlify / Railway static)
-
-1. Build command: `npm run build` (outputs static files to `dist/`).
-2. Set `VITE_API_URL` to point to the public backend URL.
-3. Set the remaining `VITE_FIREBASE_*` and `VITE_CLOUDINARY_*` environment variables on the host.
-4. Publish the contents of `dist/` as a static site.
-
-### Mobile app (Expo / EAS Build)
-
-1. Build the app: `npm run build` (builds a development-profile Android build via EAS), or configure a separate `production` profile in `eas.json`.
-2. **Important**: before building for a real device or production, update `financeApp/src/api/index.ts` — `BASE_URL` is currently hardcoded to a local IP address (`http://192.168.0.106:3000`), which only works on your local Wi-Fi network. Replace it with the public backend URL (e.g. via `expo-constants`/`app.json → extra` or an environment variable), otherwise the built app won't be able to reach the server.
-3. Configure Firebase (Google Sign-In) for the production build: add the release build's SHA certificates in the Firebase/Google Cloud console.
-
-### Pre-deployment checklist
-
-- [ ] Replaced the hardcoded local IP in `financeApp/src/api/index.ts` with the production backend URL
-- [ ] All backend environment variables are set on the host (`DATABASE_URL`, `FIREBASE_SERVICE_ACCOUNT`, `PORT`)
-- [ ] `VITE_API_URL` and the remaining `VITE_*` variables are set on the admin panel host
-- [ ] The database migration (`npm run migrate`) has been run against the production database
-- [ ] The backend builds successfully (`npm run build`) with no TypeScript errors
-- [ ] Authorized domains and OAuth redirect settings in the Firebase Console include the production domains
-- [ ] CORS on the backend (currently open to all origins via `cors()`) is restricted to specific domains if needed
-- [ ] Secrets (`.env` files, Firebase Service Account keys) are not committed to the repository — see the section below
-
-## Available Scripts
-
-**financeApp-backend**
-
-| Command | Description |
-|---|---|
-| `npm run dev` | Run the server in development mode (`tsx src/index.ts`) |
-| `npm run build` | Compile TypeScript into `dist/` |
-| `npm run start` | Run the built server (`node dist/index.js`) |
-| `npm run migrate` | Fully rebuild the database schema |
-| `npm run update:bonds` | Manually run the bond data parser/updater |
-
-**financeApp**
-
-| Command | Description |
-|---|---|
-| `npm run start` | Launch Expo Dev Tools |
-| `npm run lan` | Start with local network access |
-| `npm run tunnel` | Start via Expo tunnel |
-| `npm run android` / `npm run ios` | Run on Android/iOS via `expo run` |
-| `npm run web` | Run the web build |
-| `npm run lint` | Run the linter |
-| `npm run build` | Build via EAS (development profile, Android) |
-
-**financeApp-admin**
-
-| Command | Description |
-|---|---|
-| `npm run dev` | Start the Vite dev server |
-| `npm run build` | Production build (`tsc && vite build`) |
-| `npm run preview` | Preview the production build locally |
-| `npm run lint` | Run the linter |
-
-## Security Notes & Known Issues
-
-- `financeApp/.gitignore` only ignores `.env*.local`, not the `.env` file itself — make sure `financeApp/.env` isn't already committed to git history, or add `.env` to the ignore list.
-- `financeApp-admin` has no `.gitignore` file at all — `node_modules/` and `.env` (containing Firebase and Cloudinary keys) are unprotected from accidental commits. Add a `.gitignore` with at least `node_modules/` and `.env` before publishing the repository.
-- `financeApp-backend/.gitignore` already correctly ignores `.env`, `node_modules/`, and `dist/`.
-- Before a public release, rotate any keys/secrets that may have previously ended up in the git history.
-
-## Author
-
-Diploma project. Author: add your name and contact info (e.g. a link to your GitHub profile) before publishing the repository.
+https://youtu.be/vCzYzoSwLKI
